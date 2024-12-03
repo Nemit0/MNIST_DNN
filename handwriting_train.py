@@ -13,9 +13,9 @@ def main():
     test_images = test_images / 255.0
 
     # Convert to torch tensors
-    train_x = torch.tensor(train_images, dtype=torch.float32)
+    train_x = torch.tensor(train_images, dtype=torch.float64)
     train_y = torch.tensor(train_labels, dtype=torch.int64)
-    test_x = torch.tensor(test_images, dtype=torch.float32)
+    test_x = torch.tensor(test_images, dtype=torch.float64)
     test_y = torch.tensor(test_labels, dtype=torch.int64)
 
     # One-hot encode labels

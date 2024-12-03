@@ -243,8 +243,8 @@ class Layer:
         self.output_size = output_size
         self.activation = activation
 
-        self.weights = torch.randn(input_size, output_size, requires_grad=False)
-        self.biases = torch.zeros(output_size, requires_grad=False)
+        self.weights = torch.randn(input_size, output_size, dtype=torch.float64, requires_grad=False)
+        self.biases = torch.zeros(output_size, dtype=torch.float64, requires_grad=False)
 
     def forward(self, inputs: Tensor) -> Tensor:
         self.inputs = inputs
