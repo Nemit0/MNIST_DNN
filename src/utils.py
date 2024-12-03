@@ -1,8 +1,7 @@
-import torch
 import struct
 import matplotlib.pyplot as plt
 import numpy as np
-from torch import Tensor, tensor
+from torch import Tensor
 
 def view_image(image: Tensor, filename:str) -> None:
     if image.device.type == 'cuda':

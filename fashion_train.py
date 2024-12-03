@@ -1,3 +1,5 @@
+from torch import tensor
+
 from src.nn_objects import *
 from src.utils import *
 
