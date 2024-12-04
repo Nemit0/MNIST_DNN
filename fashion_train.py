@@ -33,12 +33,12 @@ def main():
     print(train_y.shape, test_y.shape)
 
     # Define the neural network with adjusted input and output sizes
-    nn = NeuralNetwork([784, 512, 128, 64, 10], Sigmoid(), CrossEntropyLoss(), AdamOptimizer(0.0001))
+    nn = NeuralNetwork([784, 512, 128, 64, 10], ReLU(), CrossEntropyLoss(), AdamOptimizer(0.0001), use_layer_norm=True)
 
     # This training takes 10 minutes on RTX 3080.
 
     # Train the network (you may adjust epochs and batch_size as needed)
-    loss, accuracy = nn.train(train_x, train_y.float(), epochs=1000, batch_size=256)
+    loss, val_loss, accuracy = nn.train(train_x, train_y.float(), test_x, test_y.float(), epochs=1000, batch_size=256, patience=50)
     print(f"Final Training Accuracy: {accuracy[-1]}%")
 
     # Plot the loss
